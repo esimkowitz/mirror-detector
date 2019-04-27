@@ -44,4 +44,8 @@ When I have confirmed that this all works/is necessary for the mirror detection,
 
 ## Current plan
 
-My current plan is to use this container to train and run an object detection model. I have 200 or so sample images and the ability to generate about 500 more if I need to. Now I'm going to work through the tutorial mentioned above to train the object detection model.
+My current plan is to use this container to train and run an object detection model. I have 200 or so sample mirrors and the ability to generate about 500 more if I need to. Now I'm going to work through the tutorial mentioned above to train the object detection model.
+
+Since the first tutorial didn't work, I moved to using Google's tutorial, which is linked in the setup section. I successfully ran the quick start notebook from that tutorial and now I'm working my way through [a model training tutorial](https://towardsdatascience.com/how-to-train-your-own-object-detector-with-tensorflows-object-detector-api-bec72ecfe1d9). If all goes well, I'll try training the model for the mirrors. 
+
+Originally I thought I could just give the training program 200 images of the mirrors, which would've been nice. I even was able to slice up one of the images I took of the mirror array so that I could get the 200 unique images of mirrors. It's looking, though, like I may have to do some actual annotating of the images to show it where each mirror is. This may be more cumbersome so I may wait until I have less to do.
