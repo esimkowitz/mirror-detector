@@ -36,3 +36,9 @@ After reading through the [model training tutorial](https://towardsdatascience.c
 I may need to take some more photos of the scene with different lighting conditions, but I'm first gonna try it with just the 8 or so photos I have now, which should give me more than 800 unique examples of the mirrors. I'm hoping to get most of this work done in the next week or so once I'm done with my other work.
 
 Once the mirror detector part is complete, I can pipe the output into the [ellipse detector](https://github.com/h3ct0r/fast_ellipse_detector). I plan to make some modifications to this program so that I can pass in the bounding box for the mirrors, thereby limiting the search area for the ellipse by a factor of 200 or so. I'm then going to see about parallelizing the ellipse detection so that I can process all the mirrors in a photo rather than just one. Once I get the dimensions of the ellipses back, I think my work on this project will be complete and I'll hand it off.
+
+### 4/29/2019
+
+Today I automated more of the Docker setup and cloned some of the O'Reilly tutorial's resources to this repo so that I could make changes. I spent some time today actually learning the Docker CLI so that I understood what exactly I was doing, which helped me learn that I was actually creating a new container every time I called `docker run`. I had a lot of containers to clean up... Oops. I also annotated one of the images (not in this repo) and tried to train the model, though I ran into some dependency issues that I haven't entirely solved yet. I'll make more progress later in the week.
+
+My plan hasn't really changed from yesterday, if anything I'm more confident today that this is possible than yesterday.
