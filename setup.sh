@@ -1,10 +1,10 @@
 # Install dependencies from apt-get
-apt-get install python3 python-dev python3-dev build-essential libssl-dev libffi-dev libxml2-dev libxslt1-dev zlib1g-dev python-pip unzip
+# apt-get install python3 python-dev python3-dev build-essential libssl-dev libffi-dev libxml2-dev libxslt1-dev zlib1g-dev python-pip unzip
 
 cd ~
 
 # I was getting an error when compiling the pycocotools and the suggestion I found online was to install Cython
-pip install Cython
+# pip install Cython
 
 # COCO API installation
 git clone https://github.com/cocodataset/cocoapi.git
