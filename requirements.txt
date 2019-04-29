@@ -1,3 +1,5 @@
+# This requirements file is modified from one I found in this tutorial:
+# https://www.oreilly.com/ideas/object-detection-with-tensorflow
 numpy
 scipy
 matplotlib

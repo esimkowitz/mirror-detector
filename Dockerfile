@@ -1,3 +1,5 @@
+# This dockerfile is modified from one I found in this tutorial:
+# https://www.oreilly.com/ideas/object-detection-with-tensorflow
 FROM tensorflow/tensorflow:latest-py3
 ENV DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true
 RUN apt-get update && apt-get install -y unzip git-core tmux wget protobuf-compiler python3 python-dev python3-dev build-essential libssl-dev libffi-dev libxml2-dev libxslt1-dev zlib1g-dev python-pip

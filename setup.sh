@@ -1,5 +1,6 @@
+# This script is mostly to add missing dependencies needed to run the official TensorFlow Object Detection API examples in:
+# https://github.com/tensorflow/models/tree/master/research/object_detection
 cd ~
-
 
 # COCO API installation
 git clone https://github.com/cocodataset/cocoapi.git
