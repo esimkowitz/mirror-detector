@@ -39,6 +39,30 @@ Once the mirror detector part is complete, I can pipe the output into the [ellip
 
 ### 4/29/2019
 
-Today I automated more of the Docker setup and cloned some of the O'Reilly tutorial's resources to this repo so that I could make changes. I spent some time today actually learning the Docker CLI so that I understood what exactly I was doing, which helped me learn that I was actually creating a new container every time I called `docker run`. I had a lot of containers to clean up... Oops. I also annotated one of the images (not in this repo) and tried to train the model, though I ran into some dependency issues that I haven't entirely solved yet. I'll make more progress later in the week.
+Today I automated more of the Docker setup and cloned some of the O'Reilly tutorial's resources to this repo so that I could make changes. I spent some time today actually learning the Docker CLI so that I understood what exactly I was doing, which helped me learn that I was misusing `docker run` and actually creating a new container every time I called it. I had a lot of containers to clean up... Oops. I also annotated one of the images (not in this repo) and tried to train the model, though I ran into some dependency issues that I haven't entirely solved yet. I'll make more progress later in the week.
 
 My plan hasn't really changed from yesterday, if anything I'm more confident today that this is possible than yesterday.
+
+### 5/6/2019
+
+I took and annotated more photos today. Now I'm ready to attempt to train the object detection model. The first step for this is to mount my images directory as a volume in my docker container:
+
+```shell
+sudo docker run -it -p 8888:8888 -p 6006:6006 --rm -v ~/shared:/notebooks/mirrors/shared --net=host mirror_detector_img bash
+```
+
+I then attempted to run the following command to convert my [LabelImg](https://github.com/tzutalin/labelImg) output to TFRecord:
+
+```shell
+python create_pascal_tf_record.py --data_dir=/notebooks/mirrors/shared/test-photos/annotations/ --output_path=/notebooks/mirrors/shared/test.record
+```
+
+This threw an error: `No module named 'object_detection'`, which I found a solution to [here](https://github.com/tensorflow/models/issues/2031). I'm going to add this to the Dockerfile for future builds:
+
+```shell
+# From the /notebooks/mirrors/models/research directory
+python setup.py build
+python setup.py install
+```
+
+I now tried running the `create_pascal_tf_record.py` program again but got a different error. I found [this _other_ tutorial](https://gist.github.com/douglasrizzo/c70e186678f126f1b9005ca83d8bd2ce) that's specific to using LabelImg. It seems like I need some more annotated examples to differentiate between training and evaluation... I guess it's back to labeling... Will update later.

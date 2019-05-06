@@ -9,5 +9,3 @@ WORKDIR "/notebooks/mirrors"
 RUN pip install -r ./requirements.txt
 RUN chmod +x ./setup.sh
 RUN ./setup.sh
-CMD ["/run_jupyter.sh"]
-

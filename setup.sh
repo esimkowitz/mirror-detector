@@ -17,5 +17,9 @@ unzip protobuf.zip
 # Add Libraries to PYTHONPATH
 export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
 
+# Build and install the Python libraries
+python setup.py build
+python setup.py install
+
 # Test the installation
 python object_detection/builders/model_builder_test.py
