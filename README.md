@@ -12,7 +12,7 @@ I have supplied a [Dockerfile](/Dockerfile) with this repository which will setu
 
 ```shell
 # Build a new Docker image using the provided Dockerfile
-sudo docker build -t mirror_detector_img -f Dockerfile
+sudo docker build -t mirror_detector_img -f Dockerfile .
 # Start a container with the built image
 sudo docker run -it -p 8888:8888 -p 6006:6006 --net=host mirror_detector_img bash
 ```
